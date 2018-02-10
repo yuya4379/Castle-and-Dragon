@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    ons.ready(function() {
+      //ページロード後かなんかの処理
+      //console.log("Onsen UI is ready!");
+    });
+
+      //pageのIDで条件分け⇨ツールバーのタイトルを変更（今は画像なので空白
+    document.addEventListener('show', function(event) {
+      var page = event.target;
+      var titleElement = document.querySelector('#toolbar-title');
+
+      if (page.matches('#top_page')) {
+        titleElement.innerHTML = '';
+      } else if (page.matches('#update_page')) {
+        titleElement.innerHTML = '';
+      }　else if (page.matches('#news_page')) {
+        titleElement.innerHTML = '';
+      } else if (page.matches('#database_page')) {
+        titleElement.innerHTML = '';
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <ons-page>
+  
+    <!-- ツールバー タイトル表示のみ  -->
+    <ons-toolbar>
+      <div class="center" id="toolbar-title"></div>
+    </ons-toolbar>
+    
+    <!-- タブバー（タップ時にpageプロパティへとぶ。iconはここで設定 -->
+    <ons-tabbar position="auto">
+          <ons-tab label="TOP" page="top.html" icon="fa-home" active></ons-tab>
+          <ons-tab label="更新情報" page="update.html" icon="fa-info"></ons-tab>
+          <ons-tab label="NEWS" page="news.html" icon="fa-newspaper-o"></ons-tab>
+          <ons-tab label="データ" page="database.html" icon="fa-database"></ons-tab>
+    </ons-tabbar>
+  </ons-page>
+
+</body>
+</html>

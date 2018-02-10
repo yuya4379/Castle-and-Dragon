@@ -1,0 +1,11 @@
+/**/
+
+#toolbar-title {
+    background-image: url("../img/img_mainheader.png") ; 
+    background-size: 100% 100%;
+    background-color: black;
+}
+
+.main_top_img {
+    width:100%;
+}
